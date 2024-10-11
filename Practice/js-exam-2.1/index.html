@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js-Exam-2.1</title>
+    <style>
+        th {
+            width: 200px;
+        }
+
+        table {
+            margin: auto;
+            margin-top: 30px;
+        }
+       label{
+        font-size: 20px;
+       }
+       form{
+        border: 2px solid black;
+        width: 400px;
+        padding: 30px;
+        background-color: lightblue;
+        border-radius: 20px;
+       }
+       .label{
+        text-align: center;
+        margin: auto;
+       }
+       .div{
+        display: flex;
+        justify-content: center;
+       }
+       .subb{
+        background-color: rgb(92, 92, 195);
+        color:white;
+        font-size: 20px;
+        border-radius: 20px;
+        padding: 8px;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <form action="" style="text-align: center;" class="form">
+        <h2 style="padding-bottom: 20px;">Registration Form</h2>
+
+            <label for="name" class="label">Name : </label>
+            <input type="name" id="name"><br><br>
+
+            <label for="email">Email : </label>
+            <input type="email" id="email"><br><br>
+
+            <label for="text">Courses : </label>
+            <select name="" id="select">
+                <option>Full stack</option>
+                <option>Frontend</option>
+                <option>Backend</option>
+                <option>GIM</option>
+                <option>ui/ux</option>
+            </select><br><br>
+
+            <label for="number">Phone Number : </label>
+            <input type="number" id="number"><br><br>
+
+            <label for="url">Photo URL : </label>
+            <input type="url" id="url"><br><br>
+
+            <button id="btn" class="subb">Submit ✅</button>
+            <div id="str"></div>
+
+        </form>
+
+    </div>
+</body>
+
+</html>
+<script>
+    let a = document.getElementById("name");
+    let b = document.getElementById("email");
+    let c = document.getElementById("select");
+
+    let d = document.getElementById("number");
+    let ee = document.getElementById("url");
+
+    let ase = document.getElementById("str");
+
+    let bd = document.getElementById("tb")
+
+    let f = document.getElementById("btn");
+
+    f.addEventListener("click", abc);
+    function abc(e) {
+        e.preventDefault();
+
+        let add = document.createElement("h2");
+        let add2 = document.createElement("h2");
+        let add3 = document.createElement("h2");
+        let add4 = document.createElement("h2");
+        let add5 = document.createElement("img");
+        add.innerText = a.value;
+
+        add2.innerText = b.value;
+
+        add3.innerText = c.value;
+
+        add4.innerText = d.value;
+
+        add5.src = ee.value;
+      
+        add5.style.width = "200px";
+        add5.style.height = "200px";
+        add5.style.objectFit = "cover";
+        add5.style.borderRadius = "20px";
+        add5.style.marginTop = "50px";
+        ase.append(add5, add, add2, add3, add4);
+
+
+        let obj = {
+            name: a.value,
+            email: b.value,
+            courses: c.value,
+            number: d.value,
+            url: ee.value
+        }
+        console.log(obj);
+        if (a.value == "") {
+            alert("Enter The Name")
+        }
+        else if (b.value == "") {
+            alert("Enter The Email")
+        }
+
+        else if (d.value == "") {
+            alert("Enter The Phone Number")
+        }
+        else if (ee.value == "") {
+            alert("Enter The URL")
+        }
+
+        a.value="";
+        b.value="";
+        d.value="";
+        ee.value="";
+    }
+</script>
